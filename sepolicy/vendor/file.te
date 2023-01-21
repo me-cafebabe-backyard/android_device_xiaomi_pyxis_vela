@@ -1,0 +1,2 @@
+# FDT
+type fdt_fw_device, fs_type, sysfs_type;

@@ -1,0 +1,12 @@
+service vendor.pyxis_vela /vendor/bin/init.pyxis_vela.sh
+    class core
+    user root
+    group root
+    oneshot
+
+on property:ro.vendor.pyxis_vela.device=*
+    setprop ro.boot.product.hardware.sku ${ro.vendor.pyxis_vela.device}
+
+on property:ro.vendor.pyxis_vela.model=*
+    setprop bluetooth.device.default_name ${ro.vendor.pyxis_vela.model}
+    setprop vendor.usb.product_string ${ro.vendor.pyxis_vela.model}

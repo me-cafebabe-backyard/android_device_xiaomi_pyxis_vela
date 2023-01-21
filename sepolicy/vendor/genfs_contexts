@@ -1,0 +1,2 @@
+# FDT
+genfscon sysfs /firmware/devicetree/base/firmware/device	u:object_r:fdt_fw_device:s0

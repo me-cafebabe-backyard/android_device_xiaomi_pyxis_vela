@@ -1,0 +1,4 @@
+get_prop(vendor_init, vendor_pyxis_vela_prop);
+set_prop(vendor_init, bluetooth_config_prop);
+set_prop(vendor_init, exported_default_prop);
+set_prop(vendor_init, vendor_usb_prop);

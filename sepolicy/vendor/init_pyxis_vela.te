@@ -1,0 +1,15 @@
+type init_pyxis_vela, domain;
+type init_pyxis_vela_exec, exec_type, vendor_file_type, file_type;
+
+# Allow for transition from init domain to init_pyxis_vela
+init_daemon_domain(init_pyxis_vela)
+
+# Shell script needs to execute /vendor/bin/sh
+allow init_pyxis_vela vendor_shell_exec:file rx_file_perms;
+allow init_pyxis_vela vendor_toolbox_exec:file rx_file_perms;
+
+# Allow to read FDT
+allow init_pyxis_vela fdt_fw_device:file r_file_perms;
+
+# Allow to set prop
+set_prop(init_pyxis_vela, vendor_pyxis_vela_prop);

@@ -1,0 +1,2 @@
+# Shell Script
+/(vendor|system/vendor)/bin/init\.pyxis_vela\.sh	u:object_r:init_pyxis_vela_exec:s0
