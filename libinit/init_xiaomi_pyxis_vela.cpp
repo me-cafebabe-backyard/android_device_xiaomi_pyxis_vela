@@ -9,52 +9,48 @@
 
 #include "vendor_init.h"
 
-static const variant_info_t lmi_global_info = {
-    .hwc_value = "",
-    .sku_value = "std",
+#include <android-base/file.h>
 
-    .brand = "POCO",
-    .device = "lmi",
-    .marketname = "",
-    .model = "POCO F2 Pro",
-    .build_fingerprint = "POCO/lmi_global/lmi:12/RKQ1.211001.001/V13.0.3.0.SJKMIXM:user/release-keys",
-
-    .nfc = true,
-};
-
-static const variant_info_t lmipro_info = {
-    .hwc_value = "",
-    .sku_value = "pro",
-
-    .brand = "Redmi",
-    .device = "lmipro",
-    .marketname = "",
-    .model = "Redmi K30 Pro Zoom Edition",
-    .build_fingerprint = "Redmi/lmipro/lmipro:12/RKQ1.211001.001/V13.0.3.0.SJKMIXM:user/release-keys",
-
-    .nfc = true,
-};
-
-static const variant_info_t lmi_info = {
+static const variant_info_t pyxis_info = {
     .hwc_value = "",
     .sku_value = "",
 
-    .brand = "Redmi",
-    .device = "lmi",
+    .brand = "Xiaomi",
+    .device = "pyxis",
     .marketname = "",
-    .model = "Redmi K30 Pro",
-    .build_fingerprint = "Redmi/lmi/lmi:12/RKQ1.211001.001/V13.0.3.0.SJKMIXM:user/release-keys",
+    .model = "Mi 9 Lite",
+    .build_fingerprint = "Xiaomi/pyxis/pyxis:11/RKQ1.200826.002/V12.5.2.0.RFCMIXM:user/release-keys",
 
     .nfc = true,
 };
 
-static const std::vector<variant_info_t> variants = {
-    lmi_global_info,
-    lmipro_info,
-    lmi_info,
+static const variant_info_t vela_info = {
+    .hwc_value = "CN",
+    .sku_value = "",
+
+    .brand = "Meitu",
+    .device = "vela",
+    .marketname = "",
+    .model = "MI CC 9 Meitu Edition",
+    .build_fingerprint = "Meitu/vela/vela:11/RKQ1.200826.002/V12.5.5.0.RFECNXM:user/release-keys",
+
+    .nfc = true,
 };
 
+static void set_device_variant()
+{
+    std::string fdt_fw_device;
+
+    android::base::ReadFileToString("/sys/firmware/devicetree/base/firmware/device", &fdt_fw_device);
+    fdt_fw_device.pop_back();
+
+    if (fdt_fw_device == "pyxis")
+        set_variant_props(pyxis_info);
+    else if (fdt_fw_device == "vela")
+        set_variant_props(vela_info);
+}
+
 void vendor_load_properties() {
-    search_variant(variants);
     set_dalvik_heap();
+    set_device_variant();
 }
