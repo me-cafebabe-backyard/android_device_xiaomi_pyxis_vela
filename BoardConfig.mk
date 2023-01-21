@@ -21,8 +21,8 @@ TARGET_PROVIDES_AUDIO_EXTNS := true
 TARGET_SCREEN_DENSITY := 440
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lmi
-TARGET_RECOVERY_DEVICE_MODULES := libinit_lmi
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_pyxis_vela
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_pyxis_vela
 
 # Kernel
 TARGET_KERNEL_CONFIG += xiaomi/pyxis.config
