@@ -20,8 +20,6 @@ static const variant_info_t pyxis_info = {
     .marketname = "",
     .model = "Mi 9 Lite",
     .build_fingerprint = "Xiaomi/pyxis/pyxis:11/RKQ1.200826.002/V12.5.2.0.RFCMIXM:user/release-keys",
-
-    .nfc = true,
 };
 
 static const variant_info_t vela_info = {
@@ -33,8 +31,6 @@ static const variant_info_t vela_info = {
     .marketname = "",
     .model = "MI CC 9 Meitu Edition",
     .build_fingerprint = "Meitu/vela/vela:11/RKQ1.200826.002/V12.5.5.0.RFECNXM:user/release-keys",
-
-    .nfc = true,
 };
 
 static void set_device_variant()
