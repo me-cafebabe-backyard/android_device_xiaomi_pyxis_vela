@@ -21,7 +21,7 @@ TARGET_PROVIDES_AUDIO_EXTNS := true
 TARGET_SCREEN_DENSITY := 440
 
 # Kernel
-TARGET_KERNEL_CONFIG += xiaomi/pyxis_vela.config
+TARGET_KERNEL_CONFIG += xiaomi/pyxis.config
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
