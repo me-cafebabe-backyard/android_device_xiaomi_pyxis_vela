@@ -54,7 +54,8 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    TargetWifiOverlay
+    TargetWifiOverlay_pyxis \
+    TargetWifiOverlay_vela
 
 # Inherit from the proprietary version
 $(call inherit-product, vendor/xiaomi/pyxis_vela/pyxis_vela-vendor.mk)
