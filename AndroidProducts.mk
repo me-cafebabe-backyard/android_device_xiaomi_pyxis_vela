@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_pyxis_vela.mk
+    $(LOCAL_DIR)/miku_pyxis_vela.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_pyxis_vela-user \
-    lineage_pyxis_vela-userdebug \
-    lineage_pyxis_vela-eng
+    miku_pyxis_vela-user \
+    miku_pyxis_vela-userdebug \
+    miku_pyxis_vela-eng
